@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For My Love ❤️</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff0f5;
+            text-align: center;
+            padding: 40px;
+        }
+        h1 {
+            color: #d6336c;
+        }
+        #note {
+            font-size: 24px;
+            margin-top: 40px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: inline-block;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Daily Love Note 💌</h1>
+<div id="note">Loading today's message...</div>
+
+<script>
+const messages = [
+"Day 1: I love the way you smile.",
+"Day 2: You make ordinary days magical.",
+"Day 3: I still get excited to see you.",
+"Day 4: You are my favorite person in the world."
+// You will replace/add up to 365 messages here
+];
+
+// SET THIS TO YOUR ANNIVERSARY DATE
+const start = new Date("2024-05-04");
+
+const today = new Date();
+const daysPast = Math.floor((today - start) / (1000 * 60 * 60 * 24));
+const index = (daysPast + messages.length) % messages.length;
+
+document.getElementById("note").innerText = messages[index];
+</script>
+
+</body>
+</html>
