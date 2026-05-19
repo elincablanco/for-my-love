@@ -31,28 +31,24 @@
 
 <script>
 const messages = [
-"Day 1: Happy 2nd anniversary amor!!! I can't wait to be with you again, we're so close to starting the life we’re building together. In just one more year, I get to call you my wife - porque no ahora pues!-, and that thought fills me with more happiness than you can ever know. Every day with you is a gift, and knowing our best days are still ahead makes me love you even more deeply every day. Come back tomorrow to hear all the wonderful things I love about you!!",
+"Today is our 2nd anniversary, and I can’t help but smile thinking about how far we’ve come and how close we are to the life we’re building together. In just one more year, I get to call you my wife, and that thought fills me with more happiness than I can explain. Every day with you has been a gift, and knowing our best days are still ahead makes me love you even more deeply today than I did yesterday.",
 
-"Day 2: Sometimes I catch myself replaying little moments we’ve shared — random laughs, quiet conversations, the way we look at each other without saying anything — and I realize those are the memories that mean the most to me. You’ve turned ordinary days into something I’ll cherish forever just by being there with me.",
+"Sometimes I catch myself replaying little moments we’ve shared — random laughs, quiet conversations, the way we look at each other without saying anything — and I realize those are the memories that mean the most to me. You’ve turned ordinary days into something I’ll cherish forever just by being there with me.",
 
-"Day 3: I love the way you see the world and how you’ve helped me see it differently too. Your kindness, your patience, and the warmth you bring into every room make me proud to stand beside you. You make me want to be a better person, not because you ask me to, but because you inspire me to be.",
+"I love the way you see the world and how you’ve helped me see it differently too. Your kindness, your patience, and the warmth you bring into every room make me proud to stand beside you. You make me want to be a better person, not because you ask me to, but because you inspire me to be.",
 
-"Day 4: There’s a comfort I feel with you that I’ve never known before — like no matter what happens, as long as we’re together, everything will be okay. Being with you feels like home in the truest sense of the word, and that’s something I’m endlessly grateful for.",
+"There’s a comfort I feel with you that I’ve never known before — like no matter what happens, as long as we’re together, everything will be okay. Being with you feels like home in the truest sense of the word, and that’s something I’m endlessly grateful for.",
 
-"Day 5: I admire so many things about you, but one of my favorites is how you care so deeply for the people around you. The way you love, the way you listen, and the way you give so much of yourself so freely reminds me every day how lucky I am to be loved by you.",
+"I admire so many things about you, but one of my favorites is how you care so deeply for the people around you. The way you love, the way you listen, and the way you give so much of yourself so freely reminds me every day how lucky I am to be loved by you.",
 
-"Day 6: Even on the simplest days, when nothing particularly exciting happens, I still find myself feeling incredibly happy just because I get to share my life with you. Your presence alone is enough to make any day brighter, calmer, and more meaningful.",
+"Even on the simplest days, when nothing particularly exciting happens, I still find myself feeling incredibly happy just because I get to share my life with you. Your presence alone is enough to make any day brighter, calmer, and more meaningful.",
 
-"Day 7: When I think about our future — the adventures we’ll have, the challenges we’ll overcome, and the quiet evenings we’ll spend side by side — I feel an overwhelming sense of peace and excitement. No matter where life takes us, I know that as long as I’m with you, I’m exactly where I’m meant to be."
+"When I think about our future — the adventures we’ll have, the challenges we’ll overcome, and the quiet evenings we’ll spend side by side — I feel an overwhelming sense of peace and excitement. No matter where life takes us, I know that as long as I’m with you, I’m exactly where I’m meant to be."
 ];
 
-// SET THIS TO YOUR ANNIVERSARY DATE
-const start = new Date("2026, 4, 19");
-
 const today = new Date();
-const start = new Date(2026, 4, 19); // May is 4
+const start = new Date(2026, 4, 19); // May = 4
 
-// Strip time so timezone can’t affect it
 function toMidnight(d) {
   return new Date(d.getFullYear(), d.getMonth(), d.getDate());
 }
@@ -63,13 +59,9 @@ const daysPast = Math.floor(
   (toMidnight(today) - toMidnight(start)) / oneDay
 );
 
-// Day 1 should be index 0
 let index = daysPast;
-
 if (index < 0) index = 0;
 if (index >= messages.length) index = messages.length - 1;
-
-document.getElementById("note").innerText = messages[index];
 
 document.getElementById("note").innerText = messages[index];
 </script>
