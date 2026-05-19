@@ -50,16 +50,26 @@ const messages = [
 const start = new Date("2026, 4, 19");
 
 const today = new Date();
+const start = new Date(2026, 4, 19); // May is 4
+
+// Strip time so timezone can’t affect it
+function toMidnight(d) {
+  return new Date(d.getFullYear(), d.getMonth(), d.getDate());
+}
+
 const oneDay = 1000 * 60 * 60 * 24;
 
-const todayMidnight = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-const startMidnight = new Date(start.getFullYear(), start.getMonth(), start.getDate());
+const daysPast = Math.floor(
+  (toMidnight(today) - toMidnight(start)) / oneDay
+);
 
-const daysPast = Math.floor((todayMidnight - startMidnight) / oneDay);
+// Day 1 should be index 0
 let index = daysPast;
 
 if (index < 0) index = 0;
 if (index >= messages.length) index = messages.length - 1;
+
+document.getElementById("note").innerText = messages[index];
 
 document.getElementById("note").innerText = messages[index];
 </script>
